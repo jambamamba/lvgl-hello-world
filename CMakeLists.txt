@@ -4,6 +4,7 @@ project(${project})
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+add_compile_definitions(USE_WAYLAND=1)
 add_subdirectory(lvgl-libraries)
 set (sources
    main.c
