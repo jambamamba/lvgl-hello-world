@@ -1,0 +1,15 @@
+{
+    "version":"0.2.0",
+    "configurations": [
+        {
+            "name":"lldb",
+            "type":"lldb",
+            "request":"launch",
+            "program":"./x86-build/hello-world",
+            "args":[
+            ],
+            "cwd": "${workspaceRoot}",
+        }
+    ]
+}
+

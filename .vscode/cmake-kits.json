@@ -1,0 +1,16 @@
+[
+    {
+        "name": "x86-build",
+        "compilers": {
+            "C": "/usr/bin/clang",
+            "CXX": "/usr/bin/clang++",
+        },
+        "environmentVariables":{
+            "CMAKE_PREFIX_PATH":"${workspaceRoot}/share/cmake-modules",
+            "CMAKE_MODULE_PATH":"${workspaceRoot}/share/cmake-modules",
+            "SCREEN_HOR_RES":"800",
+            "SCREEN_VER_RES":"480"
+        }
+    }
+]
+

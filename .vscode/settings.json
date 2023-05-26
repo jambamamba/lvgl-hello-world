@@ -1,0 +1,13 @@
+{
+    "cmake.buildEnvironment": {
+
+    },
+    "cmake.buildDirectory": "${workspaceFolder}/${buildKit}",
+    "files.associations": {
+        "lv_examples.h": "c",
+        "lv_demos.h": "c",
+        "sdl.h": "c",
+        "rendering_engine.h": "c"
+    }
+}
+
