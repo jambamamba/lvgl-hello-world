@@ -83,6 +83,7 @@ initRenderingEngine(KeypadEventCallback keypress_cb, TouchEventCallback pointer_
   _keypress_callback = keypress_cb;
   _touch_callback = pointer_cb;
   _window_event_cb = window_event_cb;
+  lv_init();
   lv_wayland_init();
   static lv_disp_t *display;
   static lv_disp_drv_t display_driver;
