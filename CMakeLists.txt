@@ -4,6 +4,17 @@ project(${project})
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+set(SCREEN_HOR_RES $ENV{SCREEN_HOR_RES})
+set(SCREEN_VER_RES $ENV{SCREEN_VER_RES})
+add_compile_definitions(SCREEN_HOR_RES=${SCREEN_HOR_RES})
+add_compile_definitions(SCREEN_VER_RES=${SCREEN_VER_RES})
+
+if(USE_WAYLAND)
+    add_compile_definitions(USE_WAYLAND=1)
+else()
+    add_compile_definitions(USE_SDL=1)
+endif()
+
 add_subdirectory(lvgl-libraries)
 set (sources
    main.cpp

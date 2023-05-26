@@ -70,6 +70,8 @@ function buildarm(){
     cmake \
         -DCMAKE_SYSTEM_PROCESSOR="aarch64" \
         -DUSE_WAYLAND=1 \
+        -DSCREEN_HOR_RES=${SCREEN_HOR_RES} \
+        -DSCREEN_VER_RES=${SCREEN_VER_RES} \
         -G Ninja ..
     ninja
     popd
@@ -79,8 +81,8 @@ function main(){
     parseArgs $@
 
     # setupVscode
-    export SCREEN_HOR_RES=800 
-    export SCREEN_VER_RES=480
+    export SCREEN_HOR_RES=720 #800-80
+    export SCREEN_VER_RES=400 #480-80
 
     if [ "${target}" == "arm" ];then
         buildarm

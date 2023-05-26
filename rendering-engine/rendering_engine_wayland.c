@@ -18,7 +18,7 @@ defaultMouseReadHandler(lv_indev_drv_t * indev_drv, lv_indev_data_t * data)
   if(!_touch_callback(data->point)){
     return;
   }
-  lv_wayland_touch_read(indev_drv, data);
+  //osm lv_wayland_touch_read(indev_drv, data);
 }
 
 static KeypadEventCallback _keypress_callback = 0;
@@ -30,7 +30,7 @@ defaultKeyboardReadOverride(lv_indev_drv_t * indev_drv, lv_indev_data_t * data)
       return;
     }
   }
-  lv_wayland_keyboard_read(indev_drv, data);
+  //osm lv_wayland_keyboard_read(indev_drv, data);
 }
 
 
@@ -77,6 +77,10 @@ void wayland_init1()
     lv_indev_drv_register(&indev_drv_touch);
 }
 #endif
+
+//osm todo: read from file SCREEN_HOR_RES SCREEN_VER_RES
+// #define SCREEN_HOR_RES 800
+// #define SCREEN_VER_RES 480
 // void init_rendering_engine(const char *compositor)
 void
 initRenderingEngine(KeypadEventCallback keypress_cb, TouchEventCallback pointer_cb, WindowCloseEvent window_event_cb){
@@ -87,12 +91,9 @@ initRenderingEngine(KeypadEventCallback keypress_cb, TouchEventCallback pointer_
   lv_wayland_init();
   static lv_disp_t *display;
   static lv_disp_drv_t display_driver;
-  //osm todo: read from file SCREEN_HOR_RES SCREEN_VER_RES
-  #define SCREEN_HOR_RES 800
-  #define SCREEN_VER_RES 480
-  display = lv_wayland_create_window(SCREEN_HOR_RES, SCREEN_VER_RES, 
+  display = lv_wayland_create_window(SCREEN_HOR_RES*.8, SCREEN_VER_RES*.8, //osm fix this
     "Window Title", lvWaylandDisplayClose);
-  lv_wayland_window_set_fullscreen(display, true);
+  // lv_wayland_window_set_fullscreen(display, false);//osm fix this: full screen true crashes!
   //set env var LV_WAYLAND_DISABLE_WINDOWDECORATION=1 
 
   static lv_indev_drv_t indev_drv_keyboard;

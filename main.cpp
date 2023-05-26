@@ -48,7 +48,7 @@ addTextBox()
 
     static lv_obj_t * _label_serialnum;
     _label_serialnum = lv_label_create(obj);
-    lv_label_set_text(_label_serialnum, "Serial#");
+    lv_label_set_text(_label_serialnum, "Love");
 }
 
 
@@ -66,7 +66,7 @@ static void
 addTextArea()
 {
     static lv_obj_t * _ta = lv_textarea_create(lv_scr_act());
-    lv_textarea_set_text(_ta, "");
+    lv_textarea_set_text(_ta, "Hello World");
     lv_obj_align(_ta, LV_ALIGN_TOP_MID, 0, 78);
     lv_obj_set_size(_ta, 330, 42);
     lv_textarea_set_max_length(_ta, 15);
